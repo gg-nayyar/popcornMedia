@@ -9,6 +9,7 @@ const server = createServer(app);
 const PORT = process.env.PORT || 8000;
 
 app.use('/api/auth', expressProxy('http://localhost:8001'));
+app.use('/api/setLocation', expressProxy('http://localhost:8002'));
 
 server.listen(PORT, () => {
   console.log(`API Gateway is running on port ${PORT}`);

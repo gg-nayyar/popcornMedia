@@ -1,0 +1,25 @@
+{
+  "name": "location_service",
+  "version": "1.0.0",
+  "description": "This service will help selecting a location from where the user wants to access the theatres.",
+  "license": "ISC",
+  "author": "Krish Nayyar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/jsonwebtoken": "^9.0.10",
+    "axios": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.3"
+  }
+}
