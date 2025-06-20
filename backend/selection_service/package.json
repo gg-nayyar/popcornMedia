@@ -1,0 +1,23 @@
+{
+  "name": "selection_service",
+  "version": "1.0.0",
+  "description": "This is Selection service that will show all available movies, theatres and categories and their show timing available in selections",
+  "license": "ISC",
+  "author": "Krish Nayyar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongoose": "^5.11.96",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.0"
+  }
+}
