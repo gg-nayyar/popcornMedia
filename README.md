@@ -29,4 +29,4 @@ Contributions are welcome! Please open issues or submit pull requests for improv
 
 ---
 
-*This project is under active development. Stay tuned for updates as we build PopcornMedia into a complete movie ticket
+*This project is under active development. Stay tuned for updates as we build PopcornMedia into a complete movie ticket booking application
