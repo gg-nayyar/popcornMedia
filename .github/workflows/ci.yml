@@ -47,7 +47,7 @@ jobs:
     - name: Run Keploy tests for auth-service
       run: |
         cd backend/auth
-        keploy test --test-path .keploy/test --app-port 8001
+        keploy test -g .keploy/test -a 8001
 
     - name: Start movie-service
       run: |
@@ -58,7 +58,7 @@ jobs:
     - name: Run Keploy tests for movie-service
       run: |
         cd backend/movie_service
-        keploy test --test-path .keploy/test --app-port 8004
+        keploy test -g .keploy/test -a 8004
 
     - name: Start api-gateway
       run: |
@@ -69,4 +69,4 @@ jobs:
     - name: Run Keploy tests for api-gateway
       run: |
         cd backend/api-gateway
-        keploy test --test-path .keploy/test --app-port 8000
+        keploy test -g .keploy/test -a 8000

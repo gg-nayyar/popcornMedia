@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node server.ts"
   },
   "dependencies": {
     "@types/dotenv": "^6.1.1",
@@ -17,5 +18,9 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-http-proxy": "^2.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

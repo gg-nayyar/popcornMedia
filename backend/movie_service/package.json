@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
+    "start": "ts-node server.ts",
     "build": "tsc"
   },
   "dependencies": {
@@ -21,5 +21,9 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
