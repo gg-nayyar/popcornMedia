@@ -1,49 +1,72 @@
-name: CI with Keploy
+name: Microservices CI with Keploy (Auth, Movie, Gateway)
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  keploy-test:
+  run-keploy-tests:
     runs-on: ubuntu-latest
 
     services:
       mongo:
-        image: mongo
+        image: mongo:6
         ports:
           - 27017:27017
 
     steps:
-    - name: Checkout Code
+    - name: 📥 Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
+    - name: 🔧 Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: 18
 
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Build the project
-      run: npm run build
-
-    - name: Start App in Background
+    - name: 📦 Install deps (auth, movie, gateway)
       run: |
+        cd auth-service && npm ci && cd ..
+        cd movie-service && npm ci && cd ..
+        cd api-gateway && npm ci && cd ..
+
+    - name: ⚙️ Install Keploy CLI
+      run: |
+        curl --silent -O -L https://keploy.io/install.sh
+        chmod +x install.sh
+        ./install.sh
+        echo "$HOME/.keploy" >> $GITHUB_PATH
+
+    - name: Start auth-service
+      run: |
+        cd auth-service
         nohup npm start &
+        sleep 10
 
-    - name: Wait for server to start
-      run: sleep 5
-
-    - name: Run Keploy Tests
+    - name: Run Keploy tests for auth-service
       run: |
-        docker run \
-          --network="host" \
-          -v ${{ github.workspace }}:/app \
-          keploy/keploy:latest \
-          test \
-          --test-path /app/.keploy/test \
-          --app-port 8004
+        cd auth-service
+        keploy test --test-path .keploy/test --app-port 8001
+
+    - name: Start movie-service
+      run: |
+        cd movie-service
+        nohup npm start &
+        sleep 10
+
+    - name: Run Keploy tests for movie-service
+      run: |
+        cd movie-service
+        keploy test --test-path .keploy/test --app-port 8004
+
+    - name: Start api-gateway
+      run: |
+        cd api-gateway
+        nohup npm start &
+        sleep 10
+
+    - name: Run Keploy tests for api-gateway
+      run: |
+        cd api-gateway
+        keploy test --test-path .keploy/test --app-port 8000
