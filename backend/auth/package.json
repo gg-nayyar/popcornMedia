@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
+    "start": "ts-node server.ts",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts"
@@ -32,7 +33,6 @@
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.1",
     "ts-jest": "^29.4.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
