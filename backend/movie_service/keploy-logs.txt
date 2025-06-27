@@ -1,0 +1,8 @@
+🐰 Keploy: 2025-06-28T02:30:34+05:30 	[34mINFO[0m	config file not found; proceeding with flags only
+🐰 Keploy: 2025-06-28T02:30:34+05:30 	[34mINFO[0m	Using the last directory name as appName : movie_service
+🐰 Keploy: 2025-06-28T02:30:34+05:30 	[34mINFO[0m	Generated config file based on the flags that are used
+🐰 Keploy: 2025-06-28T02:30:34+05:30 	[34mINFO[0m	keploy initialized and probes added to the kernel.
+🐰 Keploy: 2025-06-28T02:30:36+05:30 	[34mINFO[0m	starting UDP DNS server at addr :26789
+🐰 Keploy: 2025-06-28T02:30:36+05:30 	[34mINFO[0m	starting TCP DNS server at addr :26789
+🐰 Keploy: 2025-06-28T02:30:36+05:30 	[34mINFO[0m	Keploy has taken control of the DNS resolution mechanism, your application may misbehave if you have provided wrong domain name in your application code.
+🐰 Keploy: 2025-06-28T02:30:36+05:30 	[34mINFO[0m	Proxy started at port:16789

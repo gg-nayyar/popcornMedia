@@ -1,14 +1,16 @@
 {
-  "name": "selection_service",
+  "name": "movies_service",
   "version": "1.0.0",
-  "description": "This is Selection service that will show all available movies, theatres and categories and their show timing available in selections",
+  "description": "This is Movies service that will show all available movies, theatres and categories and their show timing available in selections",
   "license": "ISC",
   "author": "Krish Nayyar",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch **/**.ts --exec npx ts-node ./server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js",
+    "build": "tsc"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.9",

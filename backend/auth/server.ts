@@ -2,6 +2,7 @@ import app from "./app";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { createServer } from "http";
+import { seedSuperAdmin } from "./seedSuperAdmin";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ async function connect() {
     .catch((err) => {
         console.error("MongoDB connection error:", err);
     });
+    await seedSuperAdmin();
     server.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
