@@ -40,33 +40,33 @@ jobs:
 
     - name: Start auth-service
       run: |
-        cd auth-service
+        cd backend/auth
         nohup npm start &
         sleep 10
 
     - name: Run Keploy tests for auth-service
       run: |
-        cd auth-service
+        cd backend/auth
         keploy test --test-path .keploy/test --app-port 8001
 
     - name: Start movie-service
       run: |
-        cd movie-service
+        cd backend/movie_service
         nohup npm start &
         sleep 10
 
     - name: Run Keploy tests for movie-service
       run: |
-        cd movie-service
+        cd backend/movie_service
         keploy test --test-path .keploy/test --app-port 8004
 
     - name: Start api-gateway
       run: |
-        cd api-gateway
+        cd backend/api-gateway
         nohup npm start &
         sleep 10
 
     - name: Run Keploy tests for api-gateway
       run: |
-        cd api-gateway
+        cd backend/api-gateway
         keploy test --test-path .keploy/test --app-port 8000
