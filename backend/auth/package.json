@@ -29,6 +29,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mongoose": "^5.11.96",
     "@types/supertest": "^6.0.3",
+    "bcryptjs": "^3.0.2",
     "jest": "^30.0.2",
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.1",
