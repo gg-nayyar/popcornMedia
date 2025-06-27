@@ -27,9 +27,9 @@ jobs:
 
     - name: 📦 Install deps (auth, movie, gateway)
       run: |
-        cd auth && npm ci && cd ..
-        cd movie_service && npm ci && cd ..
-        cd api-gateway && npm ci && cd ..
+        cd backend/auth && npm ci && cd ../..
+        cd backend/movie_service && npm ci && cd ../..
+        cd backend/api-gateway && npm ci && cd ../..
 
     - name: ⚙️ Install Keploy CLI
       run: |
