@@ -1,27 +1,48 @@
 
-## Getting Started
+### Service Overview
 
-Each service contains its own README and setup instructions. To run the full stack locally:
+- **api-gateway/**: Central entry point for routing API requests to the appropriate backend services.
+- **auth/**: Handles user registration, login, authentication, admin/superadmin management, and user profile.
+- **movie_service/**: Manages movies, their details, available locations, genres, and showtimes.
+- **theatre_service/**: Manages theatres, their locations, capacities, and showtimes for movies.
 
-1. Install dependencies for each backend service and the frontend.
-2. Start each backend service (`auth`, `location_service`, `selection_service`) using their respective `dev` scripts.
-3. Start the API gateway.
-4. Start the frontend with `npm run dev` in the `frontend` directory.
+---
+
+## How to Run
+
+1. **Install dependencies**  
+   Run `npm install` in each service directory (`auth`, `movie_service`, `theatre_service`, `api-gateway`).
+
+2. **Set up environment variables**  
+   Each service may require its own `.env` file (see `.env` examples in each folder).
+
+3. **Start MongoDB**  
+   You can use Docker Compose in `movie_service` or run your own MongoDB instance.
+
+4. **Run backend services**  
+   - Start each service using its `start` or `dev` script (see each `package.json`).
+   - Start the API gateway (`npm run dev` or `npm start` in `api-gateway`).
+
+5. **Access the API**  
+   All requests should be routed through the API Gateway (default: `http://localhost:8000/api/...`).
+
+---
 
 ## Future Scope
 
-PopcornMedia is being developed into a comprehensive Movie Ticket Booking platform. Planned features include:
+PopcornMedia will evolve into a full-featured Movie Ticket Booking system with:
 
-- **User Registration & Authentication:** Secure sign-up, login, and profile management.
-- **Location-Based Selection:** Users can select their city/state to view relevant theatres and movies.
-- **Movie & Theatre Listings:** Browse movies, categories, theatres, and showtimes filtered by location.
-- **Seat Selection & Booking:** Interactive seat maps and real-time booking.
-- **Payment Integration:** Secure payment gateway for ticket purchases.
-- **Booking History:** Users can view and manage their past and upcoming bookings.
-- **Admin Panel:** Manage movies, theatres, showtimes, and user accounts.
-- **Notifications:** Email/SMS notifications for booking confirmations and reminders.
-- **Reviews & Ratings:** Users can rate movies and theatres.
-- **Scalability:** Microservices architecture for easy scaling and maintenance.
+- **User Registration & Authentication** (with admin/superadmin roles)
+- **Location-Based Movie & Theatre Listings**
+- **Showtime and Seat Selection**
+- **Secure Ticket Booking and Payment Integration**
+- **Booking History and Notifications**
+- **Admin Panel for Content Management**
+- **User Reviews and Ratings**
+- **Scalable Microservices Architecture**
+- **Comprehensive Testing (unit, integration, e2e)**
+
+---
 
 ## Contributing
 
@@ -29,4 +50,4 @@ Contributions are welcome! Please open issues or submit pull requests for improv
 
 ---
 
-*This project is under active development. Stay tuned for updates as we build PopcornMedia into a complete movie ticket booking application
+*PopcornMedia is under active development. Stay tuned for updates as we build a complete movie ticket

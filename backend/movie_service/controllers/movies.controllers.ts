@@ -67,7 +67,7 @@ export const availableMovies = async (req: Request, res: Response): Promise<any>
 
 export const addMovie = async (req: Request, res: Response): Promise<any> => {
   try {
-    const { movieId, title, director, releaseDate, locations, genre, rating } =
+    const { movieId, title, director, releaseDate, theatres, locations, genre, rating } =
       req.body;
 
     if (
@@ -75,6 +75,7 @@ export const addMovie = async (req: Request, res: Response): Promise<any> => {
       !title ||
       !director ||
       !releaseDate ||
+      !theatres ||
       !locations ||
       !genre
     ) {
@@ -87,6 +88,7 @@ export const addMovie = async (req: Request, res: Response): Promise<any> => {
       director,
       releaseDate,
       locations,
+      theatres,
       genre,
       rating,
     });
